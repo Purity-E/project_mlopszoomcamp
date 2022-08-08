@@ -13,4 +13,4 @@ We will make use data from the following sources;
 - https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
 - https://www.kaggle.com/datasets/rchitic17/real-or-fake
 
-These datasets for training, testing and  validation purposes.
+These  datasets are for training, testing and  validation purposes. 
