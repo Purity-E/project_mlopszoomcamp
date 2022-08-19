@@ -14,3 +14,22 @@ We will make use data from the following sources;
 - https://www.kaggle.com/datasets/rchitic17/real-or-fake
 
 These  datasets are for training, testing and  validation purposes. 
+
+## Step 1 - Create notebook
+## Step 2 - Experiment tracking
+- Install mlflow
+- Run the command 'mlflow ui --backend-store-uri sqlite:///mlflow.db' to set a tracking server.  This command must run in the directory that contains the notebook.
+- In the notebook import mlflow and run the following codes;
+mlflow.set_tracking_uri("sqlite:///mlflow.db") - Connects to a tracking URI. URI provided should match the one provided in the command
+mlflow.set_experiment("experiment-name") - Will set our experiment as active, if experiment doesn't exit, it will create a new one.
+- Run linear regression, record and track info using mlfow
+- Hyperparameter tune Decision trees and Random Forest with hyperopt. Record and track info using mlflow
+- Note: Because fmin() tries to minimize the objective, the objective function must return the negative accuracy for the case of a classification algorithm.
+- Do retraining with the best model and best parameters, then autolog the model.
+- Model Registry: Register the models, then stage the models
+- Tests the models to promote to production
+
+## Quick solutions
+- How to shut down mlflow ui
+fuser -k 5000/tcp
+
