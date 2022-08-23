@@ -28,8 +28,30 @@ mlflow.set_experiment("experiment-name") - Will set our experiment as active, if
 - Do retraining with the best model and best parameters, then autolog the model.
 - Model Registry: Register the models, then stage the models
 - Tests the models to promote to production
+## Step 3 Workflow Orchestration
+- Install Prefect
+- Turn the notebook into a python script
+- Clean the script
+- Host prefect on VM (AWS). Run command ' prefect config set PREFECT_ORION_UI_API_URL="http://<external-ip>:4200/api" '
+- Start prefect orion with 'prefect orion start --host 0.0.0.0'
+- From local machine, configure to hit the API with ' prefect config set PREFECT_API_URL="http://<external-ip>:4200/api" '
+- Create a main function on the script and wrap it with a @flow decorator
+- Add @task decorator around task functions and make sure to add .result() to it in the main function
+- Run 'prefect orion start' command to access the server
+
+
 
 ## Quick solutions
 - How to shut down mlflow ui
 fuser -k 5000/tcp
+-How turn jupyter notebook to python script
+jupyter nbconvert --to script notebookname (make sure to install nbconvert)
+- How to comment a block of code in python
+crtl + / (On windows)
+- How to check for prefect configuration
+prefect config view
+- How to unset prefect configuration
+prefect config unset
+- How to fix '400 Bad Request'
+Install latest version of prefect 2.0
 
