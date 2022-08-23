@@ -38,6 +38,9 @@ mlflow.set_experiment("experiment-name") - Will set our experiment as active, if
 - Create a main function on the script and wrap it with a @flow decorator
 - Add @task decorator around task functions and make sure to add .result() to it in the main function
 - Run 'prefect orion start' command to access the server
+- Create a local storage 'prefect storage create' (local storage)
+- Deploy runs 'prefect deployment create file_name.py'
+- Create agents and works queues to run scheduled runs
 
 
 
@@ -54,4 +57,6 @@ prefect config view
 prefect config unset
 - How to fix '400 Bad Request'
 Install latest version of prefect 2.0
+- How to check prefect storage
+prefect storage ls
 
