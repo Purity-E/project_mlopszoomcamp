@@ -41,6 +41,17 @@ mlflow.set_experiment("experiment-name") - Will set our experiment as active, if
 - Create a local storage 'prefect storage create' (local storage)
 - Deploy runs 'prefect deployment create file_name.py'
 - Create agents and works queues to run scheduled runs
+## Step 4 Model Deployment
+* Deploy model as a webservice
+* Install flask
+* Install gunicorn
+* Create file 'predict.py' for the flask application.
+* Get the model from mlflow registry
+* Create file 'test.py' for testing
+* Put 'predict.py' into a flask app and test it with test.py
+* Run the application with gunicorn "gunicorn --bind=0.0.0.0:9696 predict:app"
+* Package app to a docker container
+* Create a dockerfile
 
 
 
