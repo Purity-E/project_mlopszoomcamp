@@ -52,6 +52,9 @@ mlflow.set_experiment("experiment-name") - Will set our experiment as active, if
 * Run the application with gunicorn "gunicorn --bind=0.0.0.0:9696 predict:app"
 * Package app to a docker container
 * Create a dockerfile
+* Create .yml file that contain environment dependencies 'conda env export > nlp_project.yml'
+* Build docker image '  sudo /usr/bin/docker build -t fake-news-classification:v1 . '
+
 
 
 
@@ -70,4 +73,7 @@ prefect config unset
 Install latest version of prefect 2.0
 - How to check prefect storage
 prefect storage ls
+- How to handle the 'Docker no space left on the device error'
+'docker system prune --all --force --volumes' to delete unused volumes
+'docker volume ls' to get the list of volumes
 
