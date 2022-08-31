@@ -43,17 +43,36 @@ mlflow.set_experiment("experiment-name") - Will set our experiment as active, if
 - Create agents and works queues to run scheduled runs
 ## Step 4 Model Deployment
 * Deploy model as a webservice
-* Install flask
+* Install Flask
 * Install gunicorn
-* Create file 'predict.py' for the flask application.
-* Get the model from mlflow registry
-* Create file 'test.py' for testing
-* Put 'predict.py' into a flask app and test it with test.py
-* Run the application with gunicorn "gunicorn --bind=0.0.0.0:9696 predict:app"
-* Package app to a docker container
-* Create a dockerfile
-* Create .yml file that contain environment dependencies 'conda env export > nlp_project.yml'
-* Build docker image '  sudo /usr/bin/docker build -t fake-news-classification:v1 . '
+    ## Part A (Creating a docker file with conda environment)
+    * Create file 'predict.py' for the flask application.
+    * Get the model from mlflow registry
+    * Load the count vectorizer from the local folder
+    * Create file 'test.py' for testing
+    * Put 'predict.py' into a flask app and test it with test.py
+    * Run the application with gunicorn "gunicorn --bind=0.0.0.0:9696 predict:app"
+    * Package app to a docker container
+    * Create a dockerfile
+    * Create .yml file that contain environment dependencies 'conda env export > nlp_project.yml'
+    * Build docker image '  sudo /usr/bin/docker build -t fake-news-classification:v1 . '
+    ## Part B
+    * Create Model Deployment folder
+    * copy the 'predict.py' file
+    * modify so that both the count vectorizer and model are loaded from the local file
+    * Run the application with gunicorn "gunicorn --bind=0.0.0.0:9696 predict:app"
+    * Package app to a docker container
+    * Get requirements.txt file
+    * Create a dockerfile
+    * Build docker image '  sudo /usr/bin/docker build -t fake-news-classification:v2 . '
+    * Then run 'sudo /usr/bin/docker run -it --rm -p 9696:9696  fake-news-classification:v2'
+## Step 5 Model monitoring
+* Install pymongo, evidently, pyarrow
+* Prepare a prediction service
+- Save to MongoDB and Evidently service
+## Step 6 Best practices
+* install pytest
+
 
 
 
@@ -76,4 +95,5 @@ prefect storage ls
 - How to handle the 'Docker no space left on the device error'
 'docker system prune --all --force --volumes' to delete unused volumes
 'docker volume ls' to get the list of volumes
+- How to get requirements.txt
 
