@@ -14,7 +14,7 @@ COPY ["predict.py", "models/CV.pkl", "./"]
 
 EXPOSE 9696
 
-ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "myenv", "gunicorn", "--bind=0.0.0.0:9696", "predict:app"]
+ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "nlp_project", "gunicorn", "--bind=0.0.0.0:9696", "predict:app"]
 
 
 

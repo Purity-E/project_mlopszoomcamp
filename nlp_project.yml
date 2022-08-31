@@ -91,7 +91,7 @@ dependencies:
     - distlib==0.3.5
     - distributed==2022.8.1
     - docker==5.0.3
-    - en-core-web-sm==3.4.0
+    - en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.0/en_core_web_sm-3.4.0-py3-none-any.whl
     - fastapi==0.79.1
     - fastjsonschema==2.16.1
     - filelock==3.8.0
