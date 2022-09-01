@@ -92,7 +92,12 @@ NOTE: Part B worked perfectly. Part A still has some issues
     - create pyproject.toml file to disable some suggestions
 * Formating
     - Install black and isort
-
+    - Run 'black --diff .'
+    - Run 'black .' to apply formating
+    - Run 'pylint --recursive=y .' to check for the problems
+    - use isort for sorting import problems
+    - Run 'isort --diff .'
+    - Run 'isort .'
 
 
 
