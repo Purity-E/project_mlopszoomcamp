@@ -1,6 +1,6 @@
 # importing libraries
-from dataclasses import dataclass
 import re
+import sys
 import spacy
 import contractions
 from nltk.tokenize import word_tokenize
@@ -8,7 +8,7 @@ import nltk
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
 import pickle
-import sys
+
 
 
 # normalizing the documents
@@ -20,6 +20,9 @@ def normalize_document(doc):
     doc = contractions.fix(doc)
     doc = doc.lower()
     return doc
+
+
+
 
 # removing stopwords 
 nlp = spacy.load('en_core_web_sm')
@@ -51,17 +54,17 @@ def lemmatize(doc):
 
 
 
-
-
 # Data preprocessing
-def prepare_feature(x):
+def prepare_feature(text):
     # cleaning title
-    x =  normalize_document(x) # normalize text
-    x =  remove_stop(x) # remove stopwords
-    x = lemmatize(x) # lemmatize text
+    text =  normalize_document(text) # normalize text
+    text =  remove_stop(text) # remove stopwords
+    text = lemmatize(text) # lemmatize text
     doc = []
-    doc.append(x)
+    doc.append(text)
     return doc
+
+
 
 # prediction 
 def predict(doc, cv, model):
@@ -81,10 +84,10 @@ def main(sent):
 
     # loading count vectorizer and model
     with open('CV.pkl', "rb") as f_in:
-            cv = pickle.load(f_in)
+        cv = pickle.load(f_in)
 
     with open('model.pkl', "rb") as f_in:
-            model = pickle.load(f_in)
+        model = pickle.load(f_in)
 
     # preparing features
     doc = prepare_feature(news['title'])
@@ -96,8 +99,8 @@ def main(sent):
 
 
 if __name__ == "__main__":
-    sent = sys.argv[1:]
-    pred = main(sent)
-    print(f'News classification: {pred}')
+    sentence = sys.argv[1:]
+    prediction = main(sentence)
+    print(f'News classification: {prediction}')
 
 
