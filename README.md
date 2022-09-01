@@ -83,7 +83,15 @@ NOTE: Part B worked perfectly. Part A still has some issues
 * create 'batch_test.py' 
 * Write unit test for normalizing text
 * Write unit test for preparing features
-* Write an integration test for 'batch.py' 
+* Linting 
+    - Install pylint 
+    - Run 'pylint batch.py' to check batch.py
+    - Run 'pylint --recursive=y .' to check for all the files in the working directory
+    - To view suggestion on VScode, select pylint as a linter
+    - Configure pylint and disable some suggestions
+    - create pyproject.toml file to disable some suggestions
+* Formating
+    - Install black and isort
 
 
 
