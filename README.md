@@ -123,3 +123,4 @@ NOTE: Part B worked perfectly. Part A still has some issues
 - How to handle the 'Docker no space left on the device error'
     - 'docker system prune --all --force --volumes' to delete unused volumes
     - 'docker volume ls' to get the list of volumes
+
