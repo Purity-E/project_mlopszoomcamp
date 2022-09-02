@@ -13,7 +13,7 @@ We will make use data from the following sources;
 - https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
 - https://www.kaggle.com/datasets/rchitic17/real-or-fake
 
-These  datasets are for training, testing and  validation purposes. 
+These  datasets are for training, testing and  validation purposes.
 
 ## Step 1 - Create notebook
 ## Step 2 - Experiment tracking
@@ -80,11 +80,11 @@ NOTE: Part B worked perfectly. Part A still has some issues
 * Add model and count vectorizer to the folder
 * create a test folder inside 'Best practices'
 * Add '__init__.py' to test folder to let python know it's a python package
-* create 'batch_test.py' 
+* create 'batch_test.py'
 * Write unit test for normalizing text
 * Write unit test for preparing features
-* Linting 
-    - Install pylint 
+* Linting
+    - Install pylint
     - Run 'pylint batch.py' to check batch.py
     - Run 'pylint --recursive=y .' to check for all the files in the working directory
     - To view suggestion on VScode, select pylint as a linter
@@ -98,26 +98,28 @@ NOTE: Part B worked perfectly. Part A still has some issues
     - use isort for sorting import problems
     - Run 'isort --diff .'
     - Run 'isort .'
+* Git pre-commit hooks
+    - Install pre-commit 'pip install pre-commit'
+    - Run 'pre-commit install' to add pre-commit to the git hooks
+    - Create a config file '.pre-commit-config.yaml'
 
 
 
 ## Quick solutions
 - How to shut down mlflow ui
-fuser -k 5000/tcp
--How turn jupyter notebook to python script
-jupyter nbconvert --to script notebookname (make sure to install nbconvert)
+    - fuser -k 5000/tcp
+- How turn jupyter notebook to python script
+    - jupyter nbconvert --to script notebookname (make sure to install nbconvert)
 - How to comment a block of code in python
-crtl + / (On windows)
+    - crtl + / (On windows)
 - How to check for prefect configuration
-prefect config view
+    - prefect config view
 - How to unset prefect configuration
-prefect config unset
+    - prefect config unset
 - How to fix '400 Bad Request'
-Install latest version of prefect 2.0
+    - Install latest version of prefect 2.0
 - How to check prefect storage
-prefect storage ls
+    - prefect storage ls
 - How to handle the 'Docker no space left on the device error'
-'docker system prune --all --force --volumes' to delete unused volumes
-'docker volume ls' to get the list of volumes
-
-
+    - 'docker system prune --all --force --volumes' to delete unused volumes
+    - 'docker volume ls' to get the list of volumes
