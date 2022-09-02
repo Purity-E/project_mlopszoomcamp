@@ -102,7 +102,9 @@ NOTE: Part B worked perfectly. Part A still has some issues
     - Install pre-commit 'pip install pre-commit'
     - Run 'pre-commit install' to add pre-commit to the git hooks
     - Create a config file '.pre-commit-config.yaml'
-
+* Makefiles and make
+    - create a Makefile
+    - Run make
 
 
 ## Quick solutions
