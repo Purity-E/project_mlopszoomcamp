@@ -16,12 +16,20 @@ We will make use data from the following sources;
 These  datasets are for training, testing and  validation purposes.
 
 ## Step 1 - Create notebook
+- Import the neccessary libraries
+- Load the datasets
+- Clean and prepare the data; check duplicates, missing values, imbalanced dataset
+- Clean the text data; normalize the text, remove stopwords, lemmatize the words
+- Split the data into train and validation set
+- Encode the data
+- Train and test the different models; logistic regression, Decision Trees, Random Forest
+- Evaluate the models
 ## Step 2 - Experiment tracking
 - Install mlflow
 - Run the command 'mlflow ui --backend-store-uri sqlite:///mlflow.db' to set a tracking server.  This command must run in the directory that contains the notebook.
 - In the notebook import mlflow and run the following codes;
-mlflow.set_tracking_uri("sqlite:///mlflow.db") - Connects to a tracking URI. URI provided should match the one provided in the command
-mlflow.set_experiment("experiment-name") - Will set our experiment as active, if experiment doesn't exit, it will create a new one.
+   - mlflow.set_tracking_uri("sqlite:///mlflow.db") - Connects to a tracking URI. URI provided should match the one provided in the command
+   - mlflow.set_experiment("experiment-name") - Will set our experiment as active, if experiment doesn't exit, it will create a new one.
 - Run linear regression, record and track info using mlfow
 - Hyperparameter tune Decision trees and Random Forest with hyperopt. Record and track info using mlflow
 - Note: Because fmin() tries to minimize the objective, the objective function must return the negative accuracy for the case of a classification algorithm.
@@ -67,7 +75,7 @@ mlflow.set_experiment("experiment-name") - Will set our experiment as active, if
     * Build docker image '  sudo /usr/bin/docker build -t fake-news-classification:v2 . '
     * Then run 'sudo /usr/bin/docker run -it --rm -p 9696:9696  fake-news-classification:v2'
 
-NOTE: Part B worked perfectly. Part A still has some issues
+* NOTE: Part B worked perfectly. Part A still has some issues
 ## Step 5 Model monitoring
 * Install pymongo, evidently, pyarrow
 * Prepare a prediction service
@@ -104,7 +112,7 @@ NOTE: Part B worked perfectly. Part A still has some issues
     - Create a config file '.pre-commit-config.yaml'
 * Makefiles and make
     - create a Makefile
-    - Run make
+    - Run 'make run'
 
 
 ## Quick solutions
