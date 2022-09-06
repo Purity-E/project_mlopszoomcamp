@@ -51,7 +51,7 @@ These  datasets are for training, testing and  validation purposes.
 - Create a local storage 'prefect storage create' (local storage)
 - Deploy runs 'prefect deployment create file_name.py'
 - Create agents and works queues to run scheduled runs
-## Step 4 Model Deployment
+## Step 4 Model Deployment (Check Model-Deployment folder)
 * Deploy model as a webservice
 * Install Flask
 * Install gunicorn
@@ -78,11 +78,11 @@ These  datasets are for training, testing and  validation purposes.
     * Then run 'sudo /usr/bin/docker run -it --rm -p 9696:9696  fake-news-classification:v2'
 
 * NOTE: Part B worked perfectly. Part A still has some issues
-## Step 5 Model monitoring
+## Step 5 Model monitoring (Check Model-monitoring folder)
 * Install pymongo, evidently, pyarrow
 * Prepare a prediction service
 - Save to MongoDB and Evidently service
-## Step 6 Best practices
+## Step 6 Best practices (Check Best-practices folder)
 * install pytest
 * configure pytest
 * create folder 'Best practices'
