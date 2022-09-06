@@ -1,5 +1,6 @@
-# project_mlopszoomcamp
-This repository contains all the code and all information about my project for the mlopszoomcamp course. This project involves creating a machine learning model to detect fake news. It is an end to end machine learning project that involves all the steps from building a model to deploying the model.
+# Course Project
+ This project involves creating a machine learning model to detect fake news. It is an end to end machine learning project that involves all the steps from building a model to deploying the model.
+ This repository contains all the code and all information about my project for the mlopszoomcamp course.
 
 # Fake News Detection
 ## Problem Description
