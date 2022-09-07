@@ -83,7 +83,14 @@ These  datasets are for training, testing and  validation purposes.
 * Install pymongo, evidently, pyarrow
 * Prepare a prediction service
     - Save to MongoDB and Evidently service
+    - create 'app.py' script
+    - create docker file
 * Prepare evidently service
+    - create 'app.py' script
+    - create docker file
+    - create config file 'config.yaml'
+* Create save data script 'send_data.py'
+* Send data to evidently service. Run 'python send_data.py'
 ## Step 6 Best practices (Check Best-practices folder)
 * install pytest
 * configure pytest
