@@ -81,7 +81,8 @@ These  datasets are for training, testing and  validation purposes.
 ## Step 5 Model monitoring (Check Model-monitoring folder)
 * Install pymongo, evidently, pyarrow
 * Prepare a prediction service
-- Save to MongoDB and Evidently service
+    - Save to MongoDB and Evidently service
+* Prepare evidently service
 ## Step 6 Best practices (Check Best-practices folder)
 * install pytest
 * configure pytest
