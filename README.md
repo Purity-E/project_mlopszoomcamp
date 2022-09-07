@@ -78,7 +78,7 @@ These  datasets are for training, testing and  validation purposes.
     * Create .yml file that contain environment dependencies 'conda env export > nlp_project.yml'
     * Build docker image 'sudo /usr/bin/docker build -t fake-news-classification:v1 .'
 
-* NOTE: Part B worked perfectly. Part A still has some issues
+* NOTE: Part A worked perfectly. Part B still has some issues
 ## Step 5 Model monitoring (Check Model-monitoring folder)
 * Install pymongo, evidently, pyarrow
 * Prepare a prediction service
