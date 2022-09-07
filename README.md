@@ -11,7 +11,7 @@ Quite a number of techniques have been used to curb this problem. One of the maj
 
 In this project, we are going to build a classification model that will classify a news article as either fake or not fake. We will make use of varoius Natural language processing techniques and machine learning algorithms. This is an end-to-end machine learning project that will involve all the necessary steps that is usually carried out in machine learning project, from building the models to model registry to deploying the models to model monitoring.
 ## Data Used
-We will make use data from the following sources;
+We will make use of data from the following sources;
 - https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
 - https://www.kaggle.com/datasets/rchitic17/real-or-fake
 
@@ -55,18 +55,7 @@ These  datasets are for training, testing and  validation purposes.
 * Deploy model as a webservice
 * Install Flask
 * Install gunicorn
-    ## Part A (Creating a docker file with conda environment)
-    * Create file 'predict.py' for the flask application.
-    * Get the model from mlflow registry
-    * Load the count vectorizer from the local folder
-    * Create file 'test.py' for testing
-    * Put 'predict.py' into a flask app and test it with test.py
-    * Run the application with gunicorn "gunicorn --bind=0.0.0.0:9696 predict:app"
-    * Package app to a docker container
-    * Create a dockerfile
-    * Create .yml file that contain environment dependencies 'conda env export > nlp_project.yml'
-    * Build docker image '  sudo /usr/bin/docker build -t fake-news-classification:v1 . '
-    ## Part B
+    ## Part A
     * Create Model Deployment folder
     * copy the 'predict.py' file
     * modify so that both the count vectorizer and model are loaded from the local file
@@ -76,6 +65,18 @@ These  datasets are for training, testing and  validation purposes.
     * Create a dockerfile
     * Build docker image '  sudo /usr/bin/docker build -t fake-news-classification:v2 . '
     * Then run 'sudo /usr/bin/docker run -it --rm -p 9696:9696  fake-news-classification:v2'
+
+    ## Part B (Creating a docker file with conda environment)
+    * Create file 'predict.py' for the flask application.
+    * Get the model from mlflow registry
+    * Load the count vectorizer from the local folder
+    * Create file 'test.py' for testing
+    * Put 'predict.py' into a flask app and test it with test.py
+    * Run the application with gunicorn "gunicorn --bind=0.0.0.0:9696 predict:app"
+    * Package app to a docker container
+    * Create a dockerfile
+    * Create .yml file that contain environment dependencies 'conda env export > nlp_project.yml'
+    * Build docker image 'sudo /usr/bin/docker build -t fake-news-classification:v1 .'
 
 * NOTE: Part B worked perfectly. Part A still has some issues
 ## Step 5 Model monitoring (Check Model-monitoring folder)
