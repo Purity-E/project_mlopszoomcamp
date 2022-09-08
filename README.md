@@ -89,7 +89,9 @@ These  datasets are for training, testing and  validation purposes.
     - create 'app.py' script
     - create docker file
     - create config file 'config.yaml'
+* Create a configuration file 'docker-compose.yml'
 * Create save data script 'send_data.py'
+* Start the services by running 'docker-compose up'
 * Send data to evidently service. Run 'python send_data.py'
 ## Step 6 Best practices (Check Best-practices folder)
 * install pytest
@@ -144,4 +146,8 @@ These  datasets are for training, testing and  validation purposes.
 - How to handle the 'Docker no space left on the device error'
     - 'docker system prune --all --force --volumes' to delete unused volumes
     - 'docker volume ls' to get the list of volumes
+- How to get the list of docker containers
+    - docker container ls
+- How to stop a docker container
+    - docker stop 'container id' 
 
