@@ -12,16 +12,12 @@ MONGODB_ADDRESS = os.getenv('MONGODB_ADDRESS', 'mongodb://127.0.0.1:27017')
 # getting the evidently address
 EVIDENTLY_SERVICE_ADDRESS = os.getenv('EVIDENTLY_SERVICE', 'http://127.0.0.1:5000')
 
-# getting  count vectorizer and model
-CV_FILE = os.getenv('CV_FILE', 'CV.pkl')
-MODEL_FILE = os.getenv('MODEL_FILE', 'model.pkl')
-
 
 # loading count vectorizer and model
-with open('CV_FILE', "rb") as f_in:
+with open('CV.pkl', "rb") as f_in:
         cv = pickle.load(f_in)
 
-with open('MODEL_FILE', "rb") as f_in:
+with open('model.pkl', "rb") as f_in:
         model = pickle.load(f_in)
 
 
@@ -36,13 +32,13 @@ collection = db.get_collection("data")
 
 def save_to_db(record, prediction):
     rec = record.copy()
-    rec['prediction'] = prediction
+    rec['prediction'] = list(prediction)
     collection.insert_one(rec)
 
 
 def send_to_evidently_service(record, prediction):
     rec = record.copy()
-    rec['prediction'] = prediction
+    rec['prediction'] = list(prediction)
     requests.post(f"{EVIDENTLY_SERVICE_ADDRESS}/iterate/news", json=[rec])
 
 # creating function for the web request
@@ -52,14 +48,10 @@ def predict_endpoint():
     record = request.get_json()
 
     data = cv.transform(record)
-    y = model.predict(data)
-    if y == 1:
-        prediction = 'FAKE'
-    elif y == 0:
-        prediction = 'REAL'
+    prediction = model.predict(data)
 
     result = {
-        'News classification':prediction
+        'News classification': list(prediction)
     }
 
     save_to_db(record, prediction)

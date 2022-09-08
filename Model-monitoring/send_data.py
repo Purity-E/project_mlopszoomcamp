@@ -13,7 +13,7 @@ from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
 import pyarrow as pa
 
-df = pd.read_csv("/home/ubuntu/my_mlops_code/project_mlopszoomcamp/data/news3.csv")
+df = pd.read_csv("/home/ubuntu/my_mlops_code/project_mlopszoomcamp/data/news_b1.csv")
 table = pa.Table.from_pandas(df) # converting pandas dataframe to pyarrow table
 data = table.to_pylist()
 
